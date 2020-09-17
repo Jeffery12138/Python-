@@ -32,4 +32,11 @@ print(motorcycles)
 # 如果你要从列表中删除一个元素，且不再以任何方式使用它，就使用del语句；
 # 如果你要在删除元素后还能继续使用它，就使用方法pop()
 
+# 6.根据值删除元素
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+print(motorcycles)
+too_expensive = 'ducati'
+
+motorcycles.remove(too_expensive)
+print("\nA " + too_expensive.title() + " is too expensive for me.")
 print(motorcycles)
