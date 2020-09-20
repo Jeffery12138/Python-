@@ -27,6 +27,9 @@ print("Hi, " + guests[4] + ". I would like to have you for dinner.")
 print("Hi, " + guests[5] + ". I would like to have you for dinner.")
 print("Hi, " + guests[6] + ". I would like to have you for dinner.")
 
+guests_number = len(guests)
+print("I have invited " + str(guests_number) + " guests for dinner.")
+
 print('Sorry, I can only invite two guests for dinner.')
 guest_6 = guests.pop()
 print("Sorry, " + guest_6 + ", I can't invite you for dinner.")
