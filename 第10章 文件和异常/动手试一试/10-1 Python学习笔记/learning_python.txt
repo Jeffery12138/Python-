@@ -1,0 +1,11 @@
+In Python you can do system programming
+In Python you can do graphics processing
+In Python you can do mathematical processing
+In Python you can do text processing
+In Python you can do database programming
+In Python you can do network programming
+In Python you can do Web programming
+In Python you can do multimedia applications
+In Python you can do pymo engine
+In Python you can do hacker programming
+In Python you can do writing simple crawlers
