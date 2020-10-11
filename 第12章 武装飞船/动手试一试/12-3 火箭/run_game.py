@@ -6,15 +6,14 @@ import game_functions as gf
 
 
 def run_game():
-    # 初始化游戏并创建一个游戏对象
+    # 初始化游戏并创建一个屏幕对象
     pygame.init()
-    # 实例化Settings类，
     ai_settings = Settings()
-    # 使用settings属性设置屏幕
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Rocket")
-    # 实例化Rocket类
+    # 创建一艘火箭
     rocket = Rocket(ai_settings, screen)
+    # 开始游戏的主循环
     while True:
         gf.check_events(rocket)
         rocket.update()

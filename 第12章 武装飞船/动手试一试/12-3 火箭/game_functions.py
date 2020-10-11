@@ -12,8 +12,8 @@ def check_keydown_events(event, rocket):
         rocket.moving_up = True
     elif event.key == pygame.K_DOWN:
         rocket.moving_down = True
-  
-  
+
+
 def check_keyup_events(event, rocket):
     """响应松开"""
     if event.key == pygame.K_RIGHT:
@@ -24,8 +24,8 @@ def check_keyup_events(event, rocket):
         rocket.moving_up = False
     elif event.key == pygame.K_DOWN:
         rocket.moving_down = False
- 
- 
+
+
 def check_events(rocket):
     """响应按键和鼠标事件"""
     for event in pygame.event.get():
@@ -38,10 +38,9 @@ def check_events(rocket):
 
 
 def update_screen(ai_settings, screen, rocket):
-    # 更新屏幕上的图像，并切换到新屏幕
+    """更新屏幕上的图像，并切换到新屏幕"""
     # 每次循环时都重绘屏幕
     screen.fill(ai_settings.bg_color)
     rocket.blitme()
     # 让最近绘制的屏幕可见
     pygame.display.flip()
- 
