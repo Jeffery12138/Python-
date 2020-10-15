@@ -14,7 +14,7 @@ def run_game():
     # 创建一个用于存储星星的编组
     stars = Group()
     # 创建外星人群
-    gf.creat_star_fleet(ai_settings, screen, stars)
+    gf.create_star_fleet(ai_settings, screen, stars)
     # 开始游戏的主循环
     while True:
         gf.check_events()

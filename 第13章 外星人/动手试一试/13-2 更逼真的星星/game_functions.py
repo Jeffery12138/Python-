@@ -44,16 +44,16 @@ def get_number_rows(ai_settings, star_height):
     return number_rows
 
 
-def creat_star(ai_settings, screen, stars, star_number, row_numbers):
+def create_star(ai_settings, screen, stars, star_number, row_numbers):
     star = Star(ai_settings, screen)
     star_width = star.rect.width
-    star.x = star_width + 2 * star_width  * star_number
+    star.x = randint(-50, 50) + 2 * star_width * star_number
     star.rect.x = star.x
-    star.rect.y = star.rect.height + 2 * star.rect.height * row_numbers
+    star.rect.y = randint(-50, 50) + 2 * star.rect.height * row_numbers
     stars.add(star)
     
         
-def creat_star_fleet(ai_settings, screen, stars):
+def create_star_fleet(ai_settings, screen, stars):
     """创建星星群"""
     # 创建一个星星，并计算一行可容纳多少个星星
     # 星星间距为星星宽度
@@ -63,10 +63,4 @@ def creat_star_fleet(ai_settings, screen, stars):
     # 创建星星群
     for row_number in range(number_rows):
         for star_number in range(number_stars_x):
-            # random_ratio_x = randint(-number_stars_x, number_stars_x) / number_stars_x
-            # random_ratio_y = randint(-number_rows, number_rows) / number_rows
-            # star_number = int(star_number * random_ratio_x)
-            # row_number = int(row_number * random_ratio_y)
-            star_number = randint(0, number_stars_x)
-            row_number = randint(0, number_rows)
-            creat_star(ai_settings, screen, stars, star_number, row_number)
+            create_star(ai_settings, screen, stars, star_number, row_number)
