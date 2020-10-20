@@ -52,6 +52,8 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, targets, bu
     """在玩家单击Play按钮时开始新游戏"""
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
+        # 重置游戏设置
+        ai_settings.initialize_dynamic_settings()
         # 隐藏光标
         pygame.mouse.set_visible(False)
         # 重置游戏统计信息
@@ -98,8 +100,9 @@ def check_bullet_target_collisions(ai_settings, screen, targets, bullets):
     # 删除发生碰撞的子弹和目标
     collisions = pygame.sprite.groupcollide(bullets, targets, True, True)
     if len(targets) == 0:
-        # 删除现有的所有子弹，并创建一个新的目标
+        # 删除现有的所有子弹，加快游戏节奏，并创建一个新的目标
         bullets.empty()
+        ai_settings.increase_speed()
         # 重置target_direction
         reset_target_direction(ai_settings)
         create_target(ai_settings, screen, targets)
